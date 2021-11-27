@@ -1,0 +1,95 @@
+version: '2.3'
+services:
+  # Core containers
+  www:
+    extends:
+      file: ${LOKALHOST_PATH}/containers/nginx/1.16.yml
+      service: www
+    mem_limit: 64m
+    memswap_limit: 64m
+    depends_on:
+    - php
+  php:
+    extends:
+      file: ${LOKALHOST_PATH}/containers/php-fpm/8.0.yml
+      service: php
+    mem_limit: 1024m
+    memswap_limit: 1024m
+    environment:
+      PHP_MEMORY_LIMIT: 256M
+      PHP_UPLOAD_MAX_FILESIZE: 16M
+      PHP_POST_MAX_SIZE: 16M
+      MAGICK_MEMORY_LIMIT: 32MB
+      MAGICK_MAP_LIMIT: 32MB
+      MAGICK_DISK_LIMIT: 2048MB
+      MAGICK_FILE_LIMIT: 5
+  php-dev:
+    extends:
+      file: ${LOKALHOST_PATH}/containers/php-fpm/8.0-dev.yml
+      service: php-dev
+    mem_limit: 1024m
+    memswap_limit: 1024m
+    environment:
+      PHP_MEMORY_LIMIT: 256M
+  drupal:
+    extends:
+      file: ${LOKALHOST_PATH}/containers/php-cli/8.0.yml
+      service: drupal
+    mem_limit: 256m
+    memswap_limit: 256m
+    environment:
+      PHP_MEMORY_LIMIT: 248M
+  mysql:
+    extends:
+      file: ${LOKALHOST_PATH}/containers/mysql/5.7.yml
+      service: mysql
+    mem_limit: 1024m
+    memswap_limit: 1024m
+
+  # Utility containers
+  composer:
+    extends:
+      file: ${LOKALHOST_PATH}/containers/composer/8.0.yml
+      service: composer
+  gulp:
+    extends:
+      file: ${LOKALHOST_PATH}/containers/gulp/4.0.yml
+      service: gulp
+
+  # Optional containers, add them here if you need something like varnish, redis, solr, ...
+  redis:
+    extends:
+      file: ${LOKALHOST_PATH}/containers/redis/5.0.yml
+      service: redis
+    mem_limit: 512m
+    memswap_limit: 512m
+
+networks:
+  proxy:
+    external: true
+
+# Declare our volume
+volumes:
+  code:
+
+x-mutagen:
+  sync:
+    defaults:
+      ignore:
+        vcs: true
+    code:
+      # https://mutagen.io/documentation/synchronization
+      alpha: ${LOKALHOST_PATH}/${STORAGE_PATH}/repo # local file system
+      beta: "volume://code" # container file system.
+      mode: "two-way-resolved"
+      ignore:
+        paths: # Ignore these when syncing.
+          - "*/node_modules/*" # First * makes sure this folder is also ignored on deeper levels.
+          - "vendor/*"
+          #- "!vendor/symfony" # Uncomment to not ignore symfony.
+          #- "!vendor/drush" # Uncomment to not ignore drush.
+      # Permissions "fixes".
+      configurationBeta:
+        permissions:
+          defaultFileMode: 0666
+          defaultDirectoryMode: 0777
