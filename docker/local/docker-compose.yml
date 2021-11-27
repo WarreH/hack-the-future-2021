@@ -85,7 +85,7 @@ x-mutagen:
       ignore:
         paths: # Ignore these when syncing.
           - "*/node_modules/*" # First * makes sure this folder is also ignored on deeper levels.
-          - "vendor/*"
+          # "vendor/*"
           #- "!vendor/symfony" # Uncomment to not ignore symfony.
           #- "!vendor/drush" # Uncomment to not ignore drush.
       # Permissions "fixes".

@@ -1,0 +1,14 @@
+uuid: 6efce6d2-75c3-4758-9bf8-42be733970f1
+name: 'Hack The Future 2021'
+mail: tim.diels@calibrate.be
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: nl
+default_langcode: nl
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

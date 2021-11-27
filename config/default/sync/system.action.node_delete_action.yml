@@ -1,0 +1,13 @@
+uuid: 10f0aa4f-9707-4030-96d5-17931c59aecc
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: t43OqwzP3CTbcAagSsWKNy6KwMm_zShXo3c4-So6rQg
+id: node_delete_action
+label: 'Inhoud verwijderen'
+type: node
+plugin: 'entity:delete_action:node'
+configuration: {  }

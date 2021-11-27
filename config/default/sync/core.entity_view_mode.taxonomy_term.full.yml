@@ -1,0 +1,12 @@
+uuid: d8628f58-386d-4f03-9c1d-c00c9a49ab06
+langcode: nl
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: '-PPKjsNQPvoIDjOuUAvlLocYD976MNjb9Zpgyz5_BWE'
+id: taxonomy_term.full
+label: 'Pagina met taxonomietermen'
+targetEntityType: taxonomy_term
+cache: true

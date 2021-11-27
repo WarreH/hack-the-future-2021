@@ -1,0 +1,4 @@
+# File: default.site.yml
+local:
+  root: /var/www/html/web
+  uri: https://htf-2021-student.lokal.host

@@ -1,0 +1,12 @@
+uuid: 235f5ef8-e58b-4628-a3e3-f9c77136c3fc
+langcode: nl
+status: false
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: mQIF_foYjmnVSr9MpcD4CTaJE_FpO1AyDd_DskztGhM
+id: user.full
+label: Gebruikersaccount
+targetEntityType: user
+cache: true
