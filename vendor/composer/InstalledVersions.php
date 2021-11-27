@@ -197,6 +197,24 @@ private static $installed = array (
         0 => '9.2.10',
       ),
     ),
+    'drupal/admin_toolbar' => 
+    array (
+      'pretty_version' => '3.0.3',
+      'version' => '3.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3.0.3',
+    ),
+    'drupal/adminimal_admin_toolbar' => 
+    array (
+      'pretty_version' => '1.11.0',
+      'version' => '1.11.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8.x-1.11',
+    ),
     'drupal/aggregator' => 
     array (
       'replaced' => 
@@ -1228,8 +1246,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '^1.0',
+        0 => '^1.0',
+        1 => '1.0',
       ),
     ),
     'psr/event-dispatcher-implementation' => 
