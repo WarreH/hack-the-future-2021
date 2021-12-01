@@ -15,6 +15,10 @@ Future 2021.
    `web/sites/default/settings.local.php` en vul de juiste database gegevens in
    `web/sites/default/settings.local.php` aan
 
+## Frontend App
+
+De frontend App is beschikbaar op `<url>/app`
+
 ## FAQ
 
 ### Keuze van lokale ontwikkel omgeving?

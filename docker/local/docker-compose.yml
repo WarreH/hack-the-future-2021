@@ -3,10 +3,10 @@ services:
   # Core containers
   www:
     extends:
-      file: ${LOKALHOST_PATH}/containers/nginx/1.16.yml
+      file: ${LOKALHOST_PATH}/containers/httpd/2.4.yml
       service: www
-    mem_limit: 64m
-    memswap_limit: 64m
+    mem_limit: 128m
+    memswap_limit: 128m
     depends_on:
     - php
   php:
