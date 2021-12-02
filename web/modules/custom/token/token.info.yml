@@ -1,0 +1,5 @@
+name: Drupal 9 token module
+type: module
+description: 'token api'
+package: custom
+core_version_requirement: ^8 || ^9

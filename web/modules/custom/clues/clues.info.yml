@@ -1,0 +1,5 @@
+name: Drupal 9 custom module
+type: module
+description: 'clues api'
+package: custom
+core_version_requirement: ^8 || ^9

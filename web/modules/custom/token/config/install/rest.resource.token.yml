@@ -1,0 +1,9 @@
+id: token
+plugin_id: token
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
