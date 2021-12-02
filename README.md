@@ -22,7 +22,7 @@ De frontend App is beschikbaar op `<url>/app`
 ## FAQ
 
 ### Keuze van lokale ontwikkel omgeving?
-Deze mag je zelf kiezen en kan bijvoorbeeld een MAPM/XAMP/WAMP/... setup zijn,
+Deze mag je zelf kiezen en kan bijvoorbeeld een MAMP/XAMP/WAMP/... setup zijn,
 mag ook een omgeving zijn gebaseerd op docker met lando/ddev/..., native of nog
 andere. Hou er rekening mee dat je zelf verantwoordelijk bent voor uw lokale
 ontwikkel omgeving. Wij kunnen proberen te helpen waar nodig, maar ga er niet
