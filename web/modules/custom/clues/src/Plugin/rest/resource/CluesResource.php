@@ -44,7 +44,7 @@ class CluesResource extends ResourceBase {
  $fault = [];
  $correct = 0;
        
-if( $weapon != $weaponGuess){
+if($weapon != $weaponGuess){
    array_push($fault, $weaponGuess);
  } else{
      $correct++;
