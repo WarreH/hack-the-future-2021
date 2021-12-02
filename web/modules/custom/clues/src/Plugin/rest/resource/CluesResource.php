@@ -37,14 +37,14 @@ class CluesResource extends ResourceBase {
  'type' => 'game'
  ]);
     $result = reset($nodes);
- $weapon = $result->get('field_weapon')[0]->get('target_id');
- $room = $result->get('field_room')[0]->get('target_id');
- $weapon = $result->get('field_suspect')[0]->get('target_id');
+ $weapon = $result->get('field_weapon')->target_id;
+ $room = $result->get('field_room')->target_id;
+ $weapon = $result->get('field_suspect')->target_id;
        
  $fault = [];
  $correct = 0;
        
-if( intval($weapon) != intval($weaponGuess)){
+if( $weapon != $weaponGuess){
    array_push($fault, $weaponGuess);
  } else{
      $correct++;
@@ -56,7 +56,7 @@ if( intval($weapon) != intval($weaponGuess)){
       
            
       }
-  if($suspect!= $suspectGuess) {
+  if($suspect != $suspectGuess) {
       array_push($fault, $suspectGuess);
        } else{
            $correct++;
